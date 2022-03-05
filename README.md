@@ -1,3 +1,3 @@
 # mateu-travel
 
-vertical solution for incoming travel agencies 
+vertical solution for travel agencies 
