@@ -11,7 +11,7 @@
     <groupId>mateu.travel</groupId>
     <artifactId>core</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>core</name>
+    <name>mateu-travel.core</name>
     <description>core</description>
     <properties>
         <java.version>17</java.version>
