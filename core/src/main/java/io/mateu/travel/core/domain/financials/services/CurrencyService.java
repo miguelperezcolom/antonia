@@ -14,7 +14,8 @@ public class CurrencyService {
     private ExchangeRateRepository exchangeRateRepository;
 
     public Money convert(Money money, String targetCurrencyIsoCode) {
-        var exchangeRate = exchangeRateRepository.find(money.getCurrencyIsoCode(), targetCurrencyIsoCode, LocalDateTime.now());
+        var exchangeRate = exchangeRateRepository
+                .find(money.getCurrencyIsoCode(), targetCurrencyIsoCode, LocalDateTime.now());
         return new Money(exchangeRate.getExchangeRate() * money.getAmount(), targetCurrencyIsoCode);
     }
 

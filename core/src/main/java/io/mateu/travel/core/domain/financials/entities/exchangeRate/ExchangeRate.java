@@ -1,8 +1,11 @@
 package io.mateu.travel.core.domain.financials.entities.exchangeRate;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class ExchangeRate {
+
+    private final String id;
 
     private final String fromCurrencyIsoCode;
 
@@ -15,12 +18,18 @@ public class ExchangeRate {
     private LocalDateTime end;
 
 
-    public ExchangeRate(String fromCurrencyIsoCode, String toCurrencyIsoCode, double exchangeRate, LocalDateTime start, LocalDateTime end) {
+    public ExchangeRate(String id, String fromCurrencyIsoCode, String toCurrencyIsoCode, double exchangeRate,
+                        LocalDateTime start, LocalDateTime end) {
         this.fromCurrencyIsoCode = fromCurrencyIsoCode;
         this.toCurrencyIsoCode = toCurrencyIsoCode;
         this.exchangeRate = exchangeRate;
         this.start = start;
         this.end = end;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getFromCurrencyIsoCode() {
