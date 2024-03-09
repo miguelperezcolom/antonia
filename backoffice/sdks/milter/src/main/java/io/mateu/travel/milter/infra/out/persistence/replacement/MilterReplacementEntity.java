@@ -7,11 +7,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Entity
 @Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class MilterReplacementEntity {
 
-    @Id private String id;
+    @Id private String id = UUID.randomUUID().toString();
 
     private String regex;
 

@@ -26,6 +26,10 @@ public class MilterPopulator {
     @PostConstruct
     public void init() {
 
+        if (milterReplacementEntityRepository.count() > 0) {
+            log.info("milter replacement entities already exist. Skipping population");
+            return;
+        }
         log.info("populating milter replacement entities");
         milterReplacementEntityRepository.save(new MilterReplacementEntity(
                 UUID.randomUUID().toString(),
@@ -33,8 +37,8 @@ public class MilterPopulator {
                 "FEET PRAGUE 2022"));
         milterReplacementEntityRepository.save(new MilterReplacementEntity(
                 UUID.randomUUID().toString(),
-                "FEET PRAGUE 2020",
-                "FEET PRAGUE 2022"));
+                "420 233 107 508",
+                "420 720 261 577"));
         log.info("%d milter replacement entities created".formatted(milterReplacementEntityRepository.count()));
 
     }

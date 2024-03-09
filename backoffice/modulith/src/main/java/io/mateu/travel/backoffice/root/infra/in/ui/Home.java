@@ -1,7 +1,32 @@
 package io.mateu.travel.backoffice.root.infra.in.ui;
 
-import io.mateu.mdd.shared.annotations.MateuUI;
+import io.mateu.mdd.core.interfaces.HasAppTitle;
+import io.mateu.mdd.shared.annotations.*;
+import io.mateu.mdd.shared.interfaces.JpaCrud;
+import io.mateu.travel.milter.infra.out.persistence.replacement.MilterReplacementEntity;
+import lombok.Getter;
 
 @MateuUI("")
-public class Home {
+@Getter
+@Caption("Welcome")
+public class Home implements HasAppTitle {
+
+    @MenuOption
+    JpaCrud<MilterReplacementEntity> emailReplacements;
+
+    @Section(value = "", card = false)
+    @RawContent
+    String home = """
+            <p>Hi!</p>
+            <p>Here you will be able to perform some actions which are not available in your system. This should make you more autonomous.</p>
+            <p>I hope you enjoy this ;)</p>
+            <p></p>
+            <p>Miguel</p>
+            """;
+
+    @Override
+    public String getAppTitle() {
+        return "New Estec";
+    }
+
 }

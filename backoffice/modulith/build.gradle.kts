@@ -32,6 +32,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     implementation("io.mateu:embedded-front:0.0.1-MATEU")
+    implementation("io.mateu:jpa:0.0.1-MATEU")
     annotationProcessor("io.mateu:annotation-processing:0.0.1-MATEU")
 
     implementation(project(":sdks:milter"))
