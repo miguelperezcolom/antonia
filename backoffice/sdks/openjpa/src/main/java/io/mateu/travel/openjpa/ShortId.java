@@ -3,22 +3,18 @@ package io.mateu.travel.openjpa;
 public final class ShortId extends OpenJPAId {
     private final short key;
 
-    public ShortId(Class var1, Short var2) {
-        this(var1, var2 == null ? 0 : var2);
+    public ShortId(Class type, String id) {
+        this(type, id == null ? 0 : Short.parseShort(id));
     }
 
-    public ShortId(Class var1, String var2) {
-        this(var1, var2 == null ? 0 : Short.parseShort(var2));
+    public ShortId(Class type, short id) {
+        super(type);
+        this.key = id;
     }
 
-    public ShortId(Class var1, short var2) {
-        super(var1);
-        this.key = var2;
-    }
-
-    public ShortId(Class var1, short var2, boolean var3) {
-        super(var1, var3);
-        this.key = var2;
+    public ShortId(Class type, short id, boolean subs) {
+        super(type, subs);
+        this.key = id;
     }
 
     public short getId() {
