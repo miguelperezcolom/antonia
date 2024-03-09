@@ -9,6 +9,7 @@ import lombok.Getter;
 @MateuUI("")
 @Getter
 @Caption("Welcome")
+@KeycloakSecured(url = "https://lemur-10.cloud-iam.com/auth", realm = "mateu", clientId = "cliente")
 public class Home implements HasAppTitle {
 
     @MenuOption

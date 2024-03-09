@@ -30,7 +30,6 @@ public class MilterStarter {
         ProtocolSteps milterProtocolSteps = ProtocolSteps.builder()
                 .noHelo()
                 .noData()
-                .noBody()
                 .build();
 
         // gateway address

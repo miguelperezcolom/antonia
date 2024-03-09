@@ -27,6 +27,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
 
     runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.postgresql:postgresql")
     //runtimeOnly("io.r2dbc:r2dbc-h2") conflict with jpa --> todo: resolve
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -36,6 +37,7 @@ dependencies {
     annotationProcessor("io.mateu:annotation-processing:0.0.1-MATEU")
 
     implementation(project(":sdks:milter"))
+    implementation(project(":sdks:openjpa"))
 }
 
 tasks.withType<Test> {
