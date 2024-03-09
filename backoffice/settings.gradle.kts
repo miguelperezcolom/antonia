@@ -10,3 +10,4 @@
 rootProject.name = "backoffice"
 include("modulith")
 include("sdks:milter")
+include("sdks:openjpa")

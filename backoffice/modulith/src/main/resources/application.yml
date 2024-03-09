@@ -5,5 +5,6 @@ spring:
     import:
 #      - classpath:milter-properties.yml
 #      - classpath:properties/kafka.yml
+      - classpath:openjpa.yml
   codec:
     max-in-memory-size: 30MB

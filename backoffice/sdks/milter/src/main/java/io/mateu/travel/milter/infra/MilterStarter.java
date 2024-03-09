@@ -1,6 +1,8 @@
 package io.mateu.travel.milter.infra;
 
+import io.mateu.travel.milter.infra.out.persistence.replacement.MilterReplacementEntityRepository;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.nightcode.milter.Actions;
 import org.nightcode.milter.MilterHandler;
 import org.nightcode.milter.ProtocolSteps;
@@ -12,7 +14,10 @@ import org.springframework.stereotype.Service;
 import java.net.InetSocketAddress;
 
 @Service
+@RequiredArgsConstructor
 public class MilterStarter {
+
+    private final MilterReplacementEntityRepository milterReplacementEntityRepository;
 
     @PostConstruct
     public void init() {
@@ -33,7 +38,7 @@ public class MilterStarter {
         ServerFactory<InetSocketAddress> serverFactory = ServerFactory.tcpIpFactory(address);
 
         // a simple milter handler that only adds header "X-Received"
-        MilterHandler milterHandler = new ModifyContentMilterHandler(milterActions, milterProtocolSteps);
+        MilterHandler milterHandler = new ModifyContentMilterHandler(milterActions, milterProtocolSteps, milterReplacementEntityRepository);
 
         MilterGatewayManager<InetSocketAddress> gatewayManager = new MilterGatewayManager<>(serverFactory, milterHandler);
 
