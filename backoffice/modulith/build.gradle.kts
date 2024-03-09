@@ -22,12 +22,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    //implementation("org.springframework.boot:spring-boot-starter-data-r2dbc") conflict with jpa --> todo: resolve
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     compileOnly("org.projectlombok:lombok")
 
     runtimeOnly("com.h2database:h2")
-    runtimeOnly("io.r2dbc:r2dbc-h2")
+    //runtimeOnly("io.r2dbc:r2dbc-h2") conflict with jpa --> todo: resolve
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
