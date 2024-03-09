@@ -1,4 +1,4 @@
-package io.mateu.travel.backoffice;
+package io.mateu.travel;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -33,6 +33,8 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     implementation("io.mateu:embedded-front:0.0.1-MATEU")
     annotationProcessor("io.mateu:annotation-processing:0.0.1-MATEU")
+
+    implementation(project(":sdks:milter"))
 }
 
 tasks.withType<Test> {

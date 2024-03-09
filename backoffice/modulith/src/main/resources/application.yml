@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: backoffice
+  config:
+    import:
+      - classpath:milter-properties.yml
+#      - classpath:properties/kafka.yml
+  codec:
+    max-in-memory-size: 30MB
