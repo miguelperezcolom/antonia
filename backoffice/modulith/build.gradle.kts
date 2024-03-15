@@ -32,9 +32,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-    implementation("io.mateu:embedded-front:0.0.1-MATEU")
-    implementation("io.mateu:jpa:0.0.1-MATEU")
-    annotationProcessor("io.mateu:annotation-processing:0.0.1-MATEU")
+    implementation("io.mateu:embedded-front:2.4.75")
+    implementation("io.mateu:jpa:2.4.75")
+    annotationProcessor("io.mateu:annotation-processing:2.4.75")
 
     implementation(project(":sdks:milter"))
     implementation(project(":sdks:openjpa"))
