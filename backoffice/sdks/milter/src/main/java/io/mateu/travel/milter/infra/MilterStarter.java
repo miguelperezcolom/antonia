@@ -36,13 +36,17 @@ public class MilterStarter {
                 .build();
 
         // gateway address
-        InetSocketAddress address = NetUtils.parseAddress(System.getProperty("jmilter.address", "0.0.0.0:4545"));
+        InetSocketAddress address = NetUtils
+                .parseAddress(System.getProperty("jmilter.address", "0.0.0.0:4545"));
         ServerFactory<InetSocketAddress> serverFactory = ServerFactory.tcpIpFactory(address);
 
-        // a simple milter handler that only adds header "X-Received"
-        MilterHandler milterHandler = new ModifyContentMilterHandler(milterActions, milterProtocolSteps, milterReplacementEntityRepository);
+        // a simple milter handler that modifies the message body by replacing known patterns
+        MilterHandler milterHandler = new ModifyContentMilterHandler(milterActions,
+                milterProtocolSteps,
+                milterReplacementEntityRepository);
 
-        MilterGatewayManager<InetSocketAddress> gatewayManager = new MilterGatewayManager<>(serverFactory, milterHandler);
+        MilterGatewayManager<InetSocketAddress> gatewayManager =
+                new MilterGatewayManager<>(serverFactory, milterHandler);
 
         gatewayManager.bind();
 
