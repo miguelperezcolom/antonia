@@ -34,7 +34,9 @@ dependencies {
     testImplementation("io.projectreactor:reactor-test")
     implementation("io.mateu:embedded-front:2.4.75")
     implementation("io.mateu:jpa:2.4.75")
+
     annotationProcessor("io.mateu:annotation-processing:2.4.75")
+    annotationProcessor("com.google.guava:guava:33.1.0-jre")
 
     implementation(project(":sdks:milter"))
     implementation(project(":sdks:openjpa"))

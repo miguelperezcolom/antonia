@@ -33,6 +33,7 @@ dependencies {
 	compileOnly("org.springframework.boot:spring-boot-starter-webflux")
 	// compileOnly("org.springframework.boot:spring-boot-starter-data-r2dbc") conflict with jpa --> todo: resolve
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("com.google.guava:guava:33.1.0-jre")
 }
 
 tasks.withType<Test> {

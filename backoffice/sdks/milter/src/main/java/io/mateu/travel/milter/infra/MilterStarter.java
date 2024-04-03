@@ -15,6 +15,9 @@ import java.net.InetSocketAddress;
 
 @Service
 @RequiredArgsConstructor
+/**
+ * creates and binds the milter service to address and port
+ */
 public class MilterStarter {
 
     private final MilterReplacementEntityRepository milterReplacementEntityRepository;

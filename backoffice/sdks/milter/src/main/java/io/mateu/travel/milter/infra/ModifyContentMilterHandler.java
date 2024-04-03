@@ -16,7 +16,8 @@ public class ModifyContentMilterHandler extends AbstractMilterHandler {
     private final Map<String, String> bodies = new HashMap();
     private final MilterReplacementEntityRepository milterReplacementEntityRepository;
 
-    ModifyContentMilterHandler(Actions milterActions, ProtocolSteps milterProtocolSteps, MilterReplacementEntityRepository milterReplacementEntityRepository) {
+    ModifyContentMilterHandler(Actions milterActions, ProtocolSteps milterProtocolSteps,
+                               MilterReplacementEntityRepository milterReplacementEntityRepository) {
         super(milterActions, milterProtocolSteps);
         this.milterReplacementEntityRepository = milterReplacementEntityRepository;
     }
@@ -39,8 +40,10 @@ public class ModifyContentMilterHandler extends AbstractMilterHandler {
         String newBoody = bodies.getOrDefault(id, "");
         bodies.remove(id);
         for (MilterReplacementEntity milterReplacementEntity : milterReplacementEntityRepository.findAll()) {
-            log.info("replacing %s with %s".formatted(milterReplacementEntity.getRegex(), milterReplacementEntity.getReplacement()));
-            newBoody = newBoody.replaceAll(milterReplacementEntity.getRegex(), milterReplacementEntity.getReplacement());
+            log.info("replacing %s with %s"
+                    .formatted(milterReplacementEntity.getRegex(), milterReplacementEntity.getReplacement()));
+            newBoody = newBoody
+                    .replaceAll(milterReplacementEntity.getRegex(), milterReplacementEntity.getReplacement());
         }
         this.messageModificationService.replaceBody(context, newBoody.getBytes(StandardCharsets.UTF_8));
         super.eom(context, bodyChunk);
