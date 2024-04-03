@@ -1,4 +1,4 @@
-package io.mateu.travel.milter.application.model.aggregates.replacement;
+package io.mateu.travel.milter.domain.model.aggregates.replacement;
 
 public class MilterReplacement {
 
