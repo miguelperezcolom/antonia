@@ -1,4 +1,4 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.util;
 
 public final class ShortId extends OpenJPAId {
     private final short key;

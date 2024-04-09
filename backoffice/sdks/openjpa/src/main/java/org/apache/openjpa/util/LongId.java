@@ -1,6 +1,9 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.util;
 
 public final class LongId extends OpenJPAId {
+
+    private static final long serialVersionUID = -5934151979593562005L;
+
     private final long key;
 
     public LongId(Class var1, Long var2) {

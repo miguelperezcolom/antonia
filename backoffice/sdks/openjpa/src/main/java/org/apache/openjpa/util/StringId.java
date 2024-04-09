@@ -1,4 +1,4 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.util;
 
 public final class StringId extends OpenJPAId {
     private final String key;

@@ -40,6 +40,8 @@ dependencies {
 
     implementation(project(":sdks:milter"))
     implementation(project(":sdks:openjpa"))
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 tasks.withType<Test> {

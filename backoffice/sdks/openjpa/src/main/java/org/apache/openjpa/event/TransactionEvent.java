@@ -1,4 +1,4 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.event;
 
 
 import java.util.Collection;

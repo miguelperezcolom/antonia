@@ -1,11 +1,14 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.event;
 
 import java.io.Externalizable;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class RemoteCommitEvent implements Externalizable {
     private static final long serialVersionUID = 1L;
@@ -183,6 +186,25 @@ public class RemoteCommitEvent implements Externalizable {
             this._senderIp = var1.readUTF();
         } catch (ClassNotFoundException var3) {
         }
+    }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "("
+                + "payload=" + + _payload
+                + ", addClasses=" + serialize(_addClasses)
+                + ", addIds=" + serialize(_addIds)
+                + ", updates=" + serialize(_updates)
+                + ", deletes=" + serialize(_deletes)
+                + ", sourceId=" + _sourceId
+                + ", senderIp=" + _senderIp
+                + ")";
+    }
+
+    private String serialize(Collection col) {
+        if (col == null) {
+            return "(empty collection)";
+        }
+        return (String) col.stream().map(c -> "" + c).collect(Collectors.joining(","));
     }
 }

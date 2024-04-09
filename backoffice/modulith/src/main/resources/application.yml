@@ -18,3 +18,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+openjpa.oldremotes: Dkodo.RemoteCommitProvider=tcp(myIp=server.estec.cz, Port=10201, Addresses=server.estec.cz:1201;server.estec.cz:10202)
+openjpa.remotes: server.estec.cz:1201;server.estec.cz:10202

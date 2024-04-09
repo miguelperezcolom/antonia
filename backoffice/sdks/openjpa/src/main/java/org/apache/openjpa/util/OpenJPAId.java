@@ -1,4 +1,4 @@
-package io.mateu.travel.openjpa;
+package org.apache.openjpa.util;
 
 import org.springframework.util.ConcurrentReferenceHashMap;
 
@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public abstract class OpenJPAId implements Comparable, Serializable {
 
-    private static ConcurrentReferenceHashMap _typeCache = new ConcurrentReferenceHashMap(1, 0);
+    private static ConcurrentReferenceHashMap _typeCache = new ConcurrentReferenceHashMap(1, 1);
 
     protected Class type;
     protected boolean subs = true;
