@@ -1,3 +1,3 @@
 # Antonia
 
-Saas solution for travel agencies 
+The open source Saas solution for travel agencies 
