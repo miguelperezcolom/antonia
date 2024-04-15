@@ -1,4 +1,9 @@
 package io.mateu.travel.backoffice.shared.domain;
 
-public interface AggregateRoot {
+public abstract class AggregateRoot {
+
+    protected void addEvent(DomainEvent event) {
+
+    }
+
 }

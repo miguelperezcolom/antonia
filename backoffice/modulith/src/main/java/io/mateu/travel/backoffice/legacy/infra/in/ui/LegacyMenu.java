@@ -5,11 +5,13 @@ import io.mateu.mdd.shared.interfaces.JpaCrud;
 import io.mateu.travel.backoffice.legacy.infra.out.persistence.billingkey.BillingKey;
 import io.mateu.travel.backoffice.legacy.infra.out.persistence.contacttype.Contact;
 import io.mateu.travel.backoffice.legacy.infra.out.persistence.contacttype.ContactType;
+import io.mateu.travel.backoffice.root.infra.in.ui.Secured;
 import io.mateu.travel.milter.infra.out.persistence.replacement.MilterReplacementEntity;
+import org.springframework.web.reactive.function.server.ServerRequest;
 
 import java.util.List;
 
-public class LegacyMenu {
+public class LegacyMenu implements Secured {
 
 //    @MenuOption
 //    JpaCrud<ContactType> contactTypes;
@@ -38,4 +40,8 @@ public class LegacyMenu {
         }
     };
 
+    @Override
+    public void isSecure(ServerRequest request) {
+        //todo: check roles
+    }
 }
