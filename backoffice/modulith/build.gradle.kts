@@ -33,6 +33,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
     implementation("io.mateu:embedded-front:3.0-alpha.6")
+    implementation("io.mateu:core:3.0-alpha.6")
     implementation("io.mateu:jpa:3.0-alpha.6")
 
     annotationProcessor("io.mateu:annotation-processing:3.0-alpha.6")
@@ -46,4 +47,8 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.create("prepareKotlinBuildScriptModel") {
+
 }

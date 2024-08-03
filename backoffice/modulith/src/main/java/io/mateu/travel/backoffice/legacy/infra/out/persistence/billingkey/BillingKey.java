@@ -1,7 +1,6 @@
 package io.mateu.travel.backoffice.legacy.infra.out.persistence.billingkey;
 
-import io.mateu.mdd.shared.annotations.Ignored;
-import io.mateu.travel.backoffice.legacy.infra.out.persistence.contacttype.Contact;
+import io.mateu.core.domain.uidefinition.shared.annotations.Ignored;
 import io.mateu.travel.openjpa.OpenJPAL2EventPublisher;
 import jakarta.persistence.*;
 import lombok.Getter;

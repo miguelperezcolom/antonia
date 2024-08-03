@@ -1,10 +1,8 @@
 package io.mateu.travel.backoffice.legacy.infra.in.ui;
 
-import io.mateu.mdd.shared.annotations.*;
-import io.mateu.mdd.shared.interfaces.JpaCrud;
+import io.mateu.core.domain.uidefinition.shared.annotations.MenuOption;
+import io.mateu.core.domain.uidefinition.shared.interfaces.JpaCrud;
 import io.mateu.travel.backoffice.legacy.infra.out.persistence.billingkey.BillingKey;
-import io.mateu.travel.backoffice.legacy.infra.out.persistence.contacttype.Contact;
-import io.mateu.travel.backoffice.legacy.infra.out.persistence.contacttype.ContactType;
 import io.mateu.travel.milter.infra.out.persistence.replacement.MilterReplacementEntity;
 
 import java.util.List;

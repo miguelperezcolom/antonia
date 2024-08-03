@@ -1,13 +1,10 @@
 package io.mateu.travel.backoffice.root.infra.in.ui;
 
-import io.mateu.mdd.core.interfaces.HasAppTitle;
-import io.mateu.mdd.shared.annotations.*;
-import io.mateu.mdd.shared.interfaces.JpaCrud;
+import io.mateu.core.domain.uidefinition.core.interfaces.HasAppTitle;
+import io.mateu.core.domain.uidefinition.shared.annotations.*;
+import io.mateu.travel.backoffice.booking.infra.in.ui.BookingMenu;
 import io.mateu.travel.backoffice.legacy.infra.in.ui.LegacyMenu;
-import io.mateu.travel.milter.infra.out.persistence.replacement.MilterReplacementEntity;
 import lombok.Getter;
-
-import java.util.List;
 
 @MateuUI("")
 @Getter
@@ -17,6 +14,9 @@ public class Home implements HasAppTitle {
 
     @Submenu
     LegacyMenu legacy;
+
+    @Submenu
+    BookingMenu booking;
 
     @Section(value = "", card = false)
     @RawContent
