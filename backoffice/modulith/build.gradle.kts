@@ -32,10 +32,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-    implementation("io.mateu:embedded-front:2.4.75")
-    implementation("io.mateu:jpa:2.4.75")
+    implementation("io.mateu:embedded-front:3.0-alpha.6")
+    implementation("io.mateu:jpa:3.0-alpha.6")
 
-    annotationProcessor("io.mateu:annotation-processing:2.4.75")
+    annotationProcessor("io.mateu:annotation-processing:3.0-alpha.6")
     annotationProcessor("com.google.guava:guava:33.1.0-jre")
 
     implementation(project(":sdks:milter"))
